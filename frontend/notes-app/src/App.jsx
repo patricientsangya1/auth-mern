@@ -1,33 +1,24 @@
-// import React from 'react';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Home from "./pages/Home/Home";
-// import Login from './pages/Login/Login';
-// import SignUp from './pages/SignUp/SignUp';
-
-// const routes =(
-//   <Router>
-//     <Routes>
-//       <Route path='/dashboard' exact element={<Home />}/>
-//       <Route path='/login' exact element={<Login />}/>
-//       <Route path='/signup' exact element={<SignUp />}/>
-//     </Routes>
-//   </Router>
-// )
-
-// const App = () => {
-//   return (
-//     <div>{routes}</div>
-//   )
-// }
-
-// export default App
-
-
-import React from 'react'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
+import Profile from './pages/Profile'
+import Navbar from './components/Navbar/Navbar'
 
 export default function App() {
   return (
-    <h1 className='text-red-500'>App</h1>
+    <BrowserRouter>
+    {/* Header*/}
+    <Navbar/>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/profile' element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
